@@ -22,12 +22,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended : true }))
 
 //ROUTES
-// It's done when movie_db is created and contains a movies and reviews table.
-
-// It's done when movie_db has been seeded with data.
-
 // It's done when the /api/movies route renders a list of all movies.
-
+app.get('/api/movies',(req,res)=>{
+    let movies;
+    db.query(`SELECT * FROM movies`,(err, result) =>{
+        movies=result;
+        res.json(movies);
+        //res.json(result)--another way to do it
+    })
+})
 // It's done when the /api/add-movie route successfully adds a movie when tested using Insomnia.
 
 // It's done when the /api/update-review route successfully updates a movie when tested using Insomnia.
