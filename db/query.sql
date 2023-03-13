@@ -1,5 +1,5 @@
 --a list of all movies
-SELECT * FROM movie_db;
+SELECT * FROM movies;
 --adds a new movie
 
 --updates a movie
